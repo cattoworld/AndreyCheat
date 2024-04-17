@@ -20,12 +20,21 @@ Visuals:AddToggle({
 	Name = "Test",
 	Default = false,
 	Callback = function(Value)
-		OrionLib:MakeNotification({
-		Name = Notify,
-		Content = "Test Activated",
-		Image = "rbxassetid://4483345998",
-		Time = 5
-	})
+		if Value == true then
+			OrionLib:MakeNotification({
+			Name = Notify,
+			Content = "Test Activated",
+			Image = "rbxassetid://4483345998",
+			Time = 5
+			})
+		else
+			OrionLib:MakeNotification({
+			Name = Notify,
+			Content = "Test Activated",
+			Image = "rbxassetid://4483345998",
+			Time = 5
+			})
+		end
 	end    
 })
 
