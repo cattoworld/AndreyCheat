@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.gitCheatusercontent.com/shlexware/Orion/main/source'), true))()
+local OrionLib = loadstring(game:HttpGet('https://raw.gitCheatusercontent.com/shlexware/Orion/main/source'))()
 
 local Notify = "Notification"
 
