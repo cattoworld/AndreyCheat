@@ -16,54 +16,55 @@ local Main = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Extra = Window:MakeTab({
+	Name = "Extra",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = true
+})
+
 Visuals:AddToggle({
 	Name = "Test",
 	Default = false,
 	Callback = function(Value)
 		if Value == true then
 			OrionLib:MakeNotification({
-			Name = Notify,
+			Name = "its a test",
 			Content = "Test Activated",
 			Image = "rbxassetid://4483345998",
 			Time = 5
 			})
 		else
 			OrionLib:MakeNotification({
-			Name = Notify,
-			Content = "Test Activated",
+			Name = "you got mail",
+			Content = "Test Deactivated",
 			Image = "rbxassetid://4483345998",
 			Time = 5
 			})
 		end
-	end    
 })
 
---[[
-Name = <string> - The name of the toggle.
-Default = <bool> - The default value of the toggle.
-Callback = <function> - The function of the toggle.
-]]
-
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
---[[
-Name = <string> - The name of the UI.
-HidePremium = <bool> - Whether or not the user details shows Premium status or not.
-SaveConfig = <bool> - Toggles the config saving in the UI.
-ConfigFolder = <string> - The name of the folder where the configs are saved.
-IntroEnabled = <bool> - Whether or not to show the intro animation.
-IntroText = <string> - Text to show in the intro animation.
-IntroIcon = <string> - URL to the image you want to use in the intro animation.
-Icon = <string> - URL to the image you want displayed on the window.
-CloseCallback = <function> - Function to execute when the window is closed.
-]]
+Main:AddToggle({
+	Name = "Warning"
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+			workspace.ChildAdded:Connect(function(inst)
+			    if inst.Name == "RushMoving" then
+					OrionLib:MakeNotification({
+					Name = "Uh oh",
+					Content = "Rush is Coming",
+					Image = "rbxassetid://17187045096",
+					Time = 5
+					})
+				elseif inst.Name == "AmbushMoving" then
+					OrionLib:MakeNotification({
+					Name = "Uh oh",
+					Content = "Ambush is Coming",
+					Image = "rbxassetid://17187047503",
+					Time = 5
+					})
+				end
+			end
+		end
+	end
+end
