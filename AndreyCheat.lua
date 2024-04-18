@@ -41,6 +41,7 @@ Visuals:AddToggle({
 			Time = 5
 			})
 		end
+	end
 })
 
 Main:AddToggle({
