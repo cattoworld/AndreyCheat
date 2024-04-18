@@ -68,3 +68,10 @@ Main:AddToggle({
 		end
 	end
 end
+
+Main:AddButton({
+	Name = "Revive",
+	Callback = function()
+		game:GetService("ReplicatedStorage").Bricks.Revive:FireServer()
+	end
+})
