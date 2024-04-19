@@ -45,7 +45,7 @@ Visuals:AddToggle({
 })
 
 Main:AddToggle({
-	Name = "Warning"
+	Name = "Warning",
 	Default = false,
 	Callback = function(Value)
 		if Value == true then
