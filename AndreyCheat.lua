@@ -68,7 +68,7 @@ Main:AddToggle({
 			end
 		end
 	end
-end
+})
 
 Main:AddButton({
 	Name = "Revive",
